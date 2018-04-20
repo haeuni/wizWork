@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
 	<!-- EduTestServlet -->
 	<servlet>
 		<servlet-name>EduTestServlet</servlet-name>
@@ -17,7 +18,7 @@
 	<servlet-mapping>
 		<servlet-name>EduTestServlet</servlet-name>
 		<url-pattern>/serv</url-pattern>
-	</servlet-mapping>  
+	</servlet-mapping>  	
 	
 	<!-- EduTestGugudan -->
 	<servlet>
@@ -27,6 +28,6 @@
 	
 	<servlet-mapping>
 		<servlet-name>EduTestGugudan</servlet-name>
-		<url-pattern>/gugu</url-pattern>
+		<url-pattern>/gugudan</url-pattern>
 	</servlet-mapping>  
 </web-app>

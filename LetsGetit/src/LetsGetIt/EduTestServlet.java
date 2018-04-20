@@ -16,12 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 // 2018_04_18
 // [문제2] 자료형과 스크립틀릿
 
-@WebServlet("/EduTestServlet")
+//@WebServlet("/EduTestServlet")
 public class EduTestServlet extends HttpServlet{
 	
-	private static final long serialVersionUID = 1L;
-	
-    //서블릿이 요청을 받으면 이벤트 처리 방식으로 자동으로 호출되는 메소드
+	//서블릿이 요청을 받으면 이벤트 처리 방식으로 자동으로 호출되는 메소드
     //HttpServlet에 정의된 메소드를 오버라이딩해서 개발자가 요청이 있을경우 어떤처리를 해야 하는지 명시해준다.
 	//@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -31,7 +29,7 @@ public class EduTestServlet extends HttpServlet{
 		
 		//1~55의 합
 		for(int i=1; i<=55; i++){			
-			sum += i;			
+			sum += i;	
 		}
 		System.out.println(sum);		
 		
@@ -57,33 +55,25 @@ public class EduTestServlet extends HttpServlet{
 		    numbers.add(i);   
 		}
 		
-//		for(int i=1; i<=numbers.size(); i++) {
-//			System.out.println(i);
-//		}
-//		--------------------------------------------------------------------------------				
-		//Map 선언
+		for(int i=1; i<=numbers.size(); i++) {
+			System.out.println(i);
+		}
+
 		HashMap<String,Integer> map = new HashMap<String,Integer>();
 		
 		//각각 문제 조건에 맞는 값을 저장
-		map.put("합", sum);
-		map.put("곱", gop);
-		map.put("홀", holcnt);
+		map.put("sum", sum);
+		map.put("gop", gop);
+		map.put("holcnt", holcnt);
+					
+		//System.out.println(map.get("sum"));
 		
 		request.setAttribute("eduTestServlet", numbers);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("eduTest.jsp");
-		dispatcher.forward(request, response);	
-		
 		request.setAttribute("eduHash", map);
-		RequestDispatcher dispatcher2 = request.getRequestDispatcher("eduTest.jsp");
-		dispatcher2.forward(request, response);
-		
-	}	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-//			throws ServletException, IOException {
-//		
-//		
-//	}
+		RequestDispatcher dispatcher = request.getRequestDispatcher("eduTest.jsp");
+		dispatcher.forward(request, response);
 	
+	}
 }
 
 
